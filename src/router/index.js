@@ -1,23 +1,50 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+import Inicio from '../views/Inicio.vue'
+import SobreMi from '../views/SobreMi.vue'
+import Contacto from '../views/Contacto.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/inicio'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/inicio',
+    name: 'Inicio',
+    component: Inicio
+  },
+  {
+    path: '/sobremi',
+    name: 'SobreMi',
+    component: SobreMi
+  },
+  {
+    path: '/contacto',
+    name: 'Contacto',
+    component: Contacto
+  },
+  {
+    path: '/post',
+    name: 'Post',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue')
+      import(/* webpackChunkName: "Entrada" */ '../views/Post.vue'),
+    children: [
+      {
+        path: ':Articulo',
+        name: 'Articulo',
+        component: () =>
+          import(/* webpackChunkName: "Articulo" */ '../views/Articulo.vue')
+      }
+    ]
+  },
+  {
+    path: '*',
+    component: () =>
+      import(/* webpackChunkName: "NotFound" */ '../views/NotFound.vue')
   }
 ]
 
