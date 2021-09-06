@@ -30,11 +30,12 @@
           <li class="nav-item" role="presentation">
             <!-- REEMPLAZAR CON ELEMENTO ROUTER LINK A CON RUTA ESTÁTICA -->
             <!-- <a href="/contacto">contacto</a> -->
-            <router-link :to="{ name: 'Contacto' }">contacto</router-link>
+            <router-link to="/contacto">contacto</router-link>
           </li>
           <li class="nav-item" role="presentation">
             <!-- REEMPLAZAR CON ELEMENTO ROUTER LINK A RUTA ESTÁTICA -->
-            <a href="/post/1">último post</a>
+            <!-- <a href="/post/1">último post</a> -->
+            <router-link to="/post/1">último Post</router-link>
           </li>
         </ul>
       </div>

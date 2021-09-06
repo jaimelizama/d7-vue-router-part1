@@ -30,8 +30,7 @@ const routes = [
   {
     path: '/post',
     name: 'Post',
-    component: () =>
-      import(/* webpackChunkName: "Entrada" */ '../views/Post.vue'),
+    component: () => import(/* webpackChunkName: "Post" */ '../views/Post.vue'),
     children: [
       {
         path: ':Articulo',
